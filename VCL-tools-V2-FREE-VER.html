@@ -1,0 +1,787 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>By.ArkVCL</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+ 
+ <script>
+setButtonImage("https://cdn.discordapp.com/attachments/995023522537680998/995376309578514503/IMG_6008.png");
+</script>
+    
+   
+        
+              
+  
+    
+    
+  
+ 
+<style type="text/css">
+* {
+    /*MÀU VĂN BẢN MẶC ĐỊNH*/
+    
+    color: #000;
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+   user-select:none
+}
+  html{
+    zoom:0.8
+     
+}
+body{
+    
+    background-color: transparent;
+}
+
+#H5AlertView {
+              user-select: none;
+            border: 1px dashed red;
+            background: #000; /**/
+  }
+#title-img{
+    position: relative;
+    z-index:1;
+  background-color:#e2e2e2;
+}
+
+#title-text{
+    padding-top:40px;
+    font-size:18px;
+    color: red;
+}
+
+#info-text{
+ user-select:none 
+    padding:10px;
+    color:#494949;
+}
+
+#content-view{
+    z-index:0;
+    background: white;
+    position: relative;
+    top: -45px;
+  user-select:none
+    
+    border: 1px solid transparent;
+    border-radius:10px;
+    padding: 10px;
+background-image: url(https://cdn.discordapp.com/attachments/995533488906317854/995543763097231420/IMG_6048.png);
+}
+
+button {
+    width: 100%;
+    height: 40px;
+    color: #fff;
+    background-color: #909090;
+    display: inline-block;
+    cursor: pointer;
+    text-align: center;
+    text-decoration: none;
+    outline: none;
+    border: none;
+    border-radius: 3px;
+    padding: 0 8px;
+    margin: 5px 0;
+    font-size:15px;
+  border-color:#909090;
+}
+
+button:active {
+    background-color: white;
+    transform: translateY(2px);
+}
+
+
+  input[type=range] {
+  -webkit-appearance: none;
+}
+input[type=range]:focus {
+  outline: none;
+}
+input[type=range]::-webkit-slider-runnable-track {
+  height:  5px;
+  cursor: pointer;
+  animate: 0.2s;
+  background: #e2e2e2;
+  border-radius: 10px;
+  border: 0px solid #010101;
+}
+
+  input {
+      -webkit-appearance: none;
+    background-color: rgba(0,0,0,0);
+    border-color: #e2e2e2;
+    height: 15px;
+    margin-top: 1px;
+    line-height:1px;
+    vertical-align: middle;
+    outline:none;
+    
+    
+   
+  }
+    
+}
+    
+input[type=checkbox]{
+    -webkit-appearance: none;
+ visibility: hidden;
+ vertical-align:middle; margin-bottom:2px;
+ cursor: pointer;
+ position: relative;
+ width: 50px;
+ height: 50px;
+  line-height:1px;
+  vertical-align: middle;
+}
+  input[type=checkbox]::after{
+ position: absolute;
+ top: 0;
+ margin-top:2px;
+ width: 14px; height: 14px;
+ border: 1px solid transparent;
+ border-radius: 3px;
+ background-color: rgba(0,0,0,0);
+ display: inline-block;
+ visibility: visible;
+ text-align: center;
+ content: ' ';
+}
+details summary::before{
+  color:#fff;
+     height:10px;
+    width:10px;
+ 
+  }
+  summary{
+    color:#000
+    outline:0;
+    background-color:#e2e2e2;
+    border-radius:5px;
+    border-color:#000;
+  }
+  summary::before
+   height:9px;
+   width:10px;
+  color:#fff;
+  border-color:#000;
+}
+  input[type=botton]{
+   width:3px;
+   height:5px;
+   color:#000;
+   
+  }
+
+
+details summary::before{
+     height:10px;
+    width:10px;
+  }
+  summary{
+    outline:0;
+  }
+  summary::before
+   height:9px;
+   width:10px;
+}
+  
+  input[type=text]{
+height:14px;
+  background-color:#fff;
+   
+}
+  input[type=text] ::-webkit-text-fill-color:#fff;
+       .el-scrollbar .el-scrollbar__bar {
+height:14px;
+            opacity: 1 !important;
+        }
+  input[type=range]::-webkit-slider-thumb {
+    width: 20px;	height: 20px;
+border-radius:50%;
+    background-color:#fff;
+border-color:#e4e4e4;
+  
+  background: #fff;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -7px;
+  }
+  .switch-btn {
+  cursor: pointer;
+  width: 45px;
+  height: 28px;
+  position: relative;
+  border: 1px solid #dfdfdf;
+  background-color: #fdfdfd;
+  box-shadow: #dfdfdf 0 0 0 0 inset;
+  border-radius: 15px;
+  background-clip: content-box;
+  display: inline-block;
+  -webkit-appearance: none;
+  user-select: none;
+  outline: none; 
+}
+.switch-btn:before {
+    content: '';
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: 20px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, .4); 
+}
+.switch-btn:checked {
+    border-color: white;
+    box-shadow: white 0 0 0 16px inset;
+    background-color: white; 
+}
+.switch-btn:checked:before {
+    left: 18px; 
+}
+.switch-btn.switch-btn-animbg {
+    transition: background-color ease .4s; 
+}
+.switch-btn.switch-btn-animbg:before {
+    transition: left .3s; 
+}
+.switch-btn.switch-btn-animbg:checked {
+    box-shadow: #dfdfdf 0 0 0 0 inset;
+    background-color: white;
+    transition: border-color .4s, background-color ease .4s; 
+}
+.switch-btn.switch-btn-animbg:checked:before {
+    transition: left .3s; 
+}
+  /* FULL THANH CUỘN */
+
+.scrollbar {
+    overflow-x: hidden;
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+}
+.scrollbar::-webkit-scrollbar {
+    width: 0px; /* CHIỀU RỘNG THANH CUỘN DỌC */
+    height: 5px;/* CHIỀU CAO THANH CUỘN NGANG */
+    background-color: #F5F5F5; /* MÀU NỀN CUỘN，一PHỦ */
+}
+/* THANH CUỘN THEO DÕI（CHUAThumb） */
+.scrollbar::-webkit-scrollbar-track {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3); /* BÓNG THEO DÕI THANH CUỘN */
+    /*border-radius: 10px; /* GÓC TRÒN */
+    background-color: #000; /* NỀN */
+}
+/* 滚动条里面的滑块 */
+.scrollbar::-webkit-scrollbar-thumb {
+    border-radius: 15px; /* 滚动条滑块圆角 */
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3); /* 滚动条滑块阴影 */
+    background-color: #000; /* 滚动条滑块颜色 */
+}
+  *:not(input, checkbox, textarea) {
+            /*禁止文本选择*/
+            -webkit-touch-callout: none;
+            -webkit-user-select: none;
+            user-select: none;
+
+
+</style>
+<script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+<script>
+if(typeof $ == 'undefined') alert("BY VCL TEAM");
+    
+//页面显示完毕事件
+$(document).ready(function(){
+    /*禁止文本选择和拖动*/
+    document.body.onselectstart = document.body.ondrag =function(){
+        return true;
+    }
+    //文本框等输入完毕后页面自动滚动到顶部
+    $("input").blur(function(){
+        window.scroll(0,0);
+    });
+    
+    //激活webkit的button:active
+    document.body.addEventListener('touchstart', function () {});
+    
+    
+    //设置可拖动区域为圆形区域
+    setWindowDrag(50, 00, 70, 70);
+    
+    if(typeof h5gg != 'undefined')
+    {
+        //调整悬浮窗位置和尺寸并全屏居中显示
+        var w=350;var h=380;
+        
+      
+        var layout = function()
+        {
+            //window.orientation是设备握持方向, 不是屏幕显示方向
+            if(window.lastorientation==window.orientation) return;
+            window.lastorientation=window.orientation;
+            
+            //window.screen中的宽高不会随着屏幕旋转更新(只会在初始化的时候固定)
+            if(Math.abs(window.orientation)==90) {
+                //横屏
+                var x=(window.screen.height - w)/1;
+                var y=(window.screen.width - h)/0;
+                setWindowRect(x, y, w, h);
+            } else {
+                //竖屏
+                var x=(window.screen.width - w)/2;
+                var y=(window.screen.height - h)/2;
+                setWindowRect(x, y, w, h);
+            }
+        }
+        
+        layout(); //设置旋转屏幕时自动调整布局和画布
+        window.addEventListener("orientationchange", layout, false);
+      
+    }
+});
+         
+
+
+
+</script>
+
+    
+</head>
+<body>
+  
+    
+  
+
+  
+    
+    
+
+  <script>
+
+function checkboxclick(input)
+{
+    alert("チェックボックス = "+input.parentElement.innerText+" = "+input.checked);
+}
+  function Speedf(input)
+{
+if (typeof addr84 === 'undefined'){
+        h5gg.clearResults();
+        h5gg.searchNumber('-980', 'F32', '0x00000000', '0x400000000');
+        h5gg.searchNearby('0.0005', 'F32', '0x164');
+        h5gg.searchNumber('-980', 'F32', '0x00000000', '0x400000000');
+h5gg.getResults('100','0', 'F32');
+
+count89 = h5gg.getResultsCount();
+r89 = h5gg.getResults(count89);
+  
+for (var i = 0; i < count89; i++) {
+  addr89 = r89[i].address;
+addr84=addr89 - -0x154
+  h5gg.setValue(addr84,input.value*1,'F32');
+  ;
+
+
+h5gg.clearResults()
+}}
+else{
+
+  
+
+  h5gg.setValue(addr84,input.value*1,'F32');
+}}
+
+
+
+
+
+
+
+
+
+
+ 
+
+</script>
+
+
+<script>
+  
+
+function anniu2() {
+    h5gg.clearResults();
+h5gg.searchNumber('90', 'F32', '0x00000000', '0x200000000');
+h5gg.searchNearby('90', 'F32', '0x100');
+h5gg.editAll('50', 'F32');
+}
+
+function clr() {
+h5gg.clearResults();
+h5gg.clearResults();
+h5gg.clearResults();
+
+
+
+}
+
+
+function xxz() {
+  h5gg.clearResults();
+  h5gg.searchNumber("1074020928", "I32", "0x00000000", "0x400000000");
+  h5gg.searchNearby("1", "F32", "0x50");
+  h5gg.searchNumber("1", "F32", "0x00000000", "0x400000000");
+  h5gg.editAll("5", "F32");
+  h5gg.clearResults();
+  alert('GO GO GO')
+
+
+}
+
+
+
+
+
+function anniu62() {
+    h5gg.clearResults();
+  h5gg.searchNumber("0.08152", "F32", "0x00000000", "0x200000000");
+  h5gg.searchNearby("0.9", "F32", "0x497");
+  h5gg.searchNearby("0.2", "F32", "0x497");
+  h5gg.searchNearby("1", "F32", "0x497");
+  h5gg.editAll("384299", "F64");
+  h5gg.clearResults();
+ 
+}
+function anniu6() {
+    h5gg.clearResults();
+    h5gg.searchNumber('0.1285700053', 'F32', '0x100000000', '0x160000000'); 
+    h5gg.searchNearby('0.2', 'F32', '0x50'); 
+    h5gg.editAll('10', 'F32');  
+  
+
+ 
+}
+
+function anniu10() {
+   
+   h5gg.editAll('90','F32');
+   h5gg.clearResults();
+  
+
+		}
+ 
+
+
+
+       
+            function anniu97() {
+            h5gg.clearResults();
+            h5gg.searchNumber('2.575036587209649e-314', 'F64', '0x00000000', '0x200000000');
+            h5gg.editAll('2.716841317300385e-314', 'F64');
+        
+
+
+
+
+
+}
+       function anniu76() {
+       h5gg.clearResults();
+       h5gg.searchNumber('17.99', 'F32', '0x00000000', '0x200000000');
+       h5gg.searchNearby('0.34', 'F32', '0x100');
+       h5gg.searchNearby('0.4', 'F32', '0x100');
+       h5gg.searchNearby('0.4', 'F32', '0x100');
+       h5gg.editAll('0.34', 'F32');
+       h5gg.editAll('8', 'F32');
+      
+
+
+
+
+
+
+}
+
+
+function anniu53() {
+       h5gg.clearResults();
+       h5gg.searchNumber('89.9', 'F32', '0x00000000', '0x200000000');
+       h5gg.searchNearby('90', 'F32', '0x100');
+       h5gg.editAll('90', 'F32');
+       h5gg.editAll('115', 'F32');
+       
+  
+
+
+
+}
+
+
+  
+
+
+function anniu36() {
+       h5gg.clearResults();
+       h5gg.searchNumber('89.9', 'F32', '0x00000000', '0x200000000');
+       h5gg.searchNearby('90', 'F32', '0x100');
+       h5gg.editAll('90', 'F32');
+       h5gg.editAll('100', 'F32');
+     
+
+
+
+}
+
+
+  function jr(){
+alert('Ann2905#5052')
+  }
+  function fff(){
+    var fpsm=prompt("FPS");
+h5gg.clearResults();
+    h5gg.searchNumber('-1.70142e+38', 'F32', '0x100000000', '0x200000000'); 
+    h5gg.searchNearby('4.243991582918676e-314', 'F64', '0x20'); 
+    h5gg.searchNearby(fpsm, 'F32', '0x20'); 
+    h5gg.searchNumber(fpsm,'F32','0x100000000', '0x200000000');
+    var fps=prompt("FPS")
+    h5gg.editAll(fps,'F32')
+    h5gg.clearResults();
+}
+
+ 
+function tianx(a){
+  
+
+  
+
+
+  
+if(a.checked==true){
+
+   
+    
+    h5gg.clearResults();
+h5gg.searchNumber('-5.140667156606297e-315', 'F64', '0x100000000', '0x200000000');
+   h5gg.getResults('2','0','F32');
+  count66 = h5gg.getResultsCount();
+
+     r11=h5gg.getResults(count66);
+     for (var i =0; i<count66;i++){addr66 = r11[i].address;
+    
+ 
+    h5gg.setValue(addr66,'7.186329346908974e+45','F64');}
+ 
+h5gg.clearResults();
+h5gg.searchNumber('-0.98875373602', 'F32', '0x100000000', '0x200000000'); 
+h5gg.searchNearby('-6.874347686909405e-41', 'F64', '0x8'); 
+ h5gg.searchNumber('-6.874347686909405e-41', 'F64', '0x100000000', '0x200000000'); 
+
+   h5gg.getResults('2','0','F32');
+  count22 = h5gg.getResultsCount();
+
+     r22=h5gg.getResults(count22);
+     for (var i =0; i<count22;i++){addr22 = r22[i].address;
+    
+ 
+    h5gg.setValue(addr22,'-6.874346696665740e-41','F64');}
+
+  h5gg.clearResults();
+  }else{
+for (var i =0; i<count66;i++){addr66 = r11[i].address;
+    
+ 
+    
+                             
+      
+    
+    h5gg.setValue(addr66,'-5.140667156606297e-315', 'F64');}
+for (var i =0; i<count22;i++){addr22 = r22[i].address;
+                              h5gg.setValue(addr22,'-6.874347686909405e-41', 'F64');}
+
+}
+}
+						
+
+</script>
+<div id="content-view">
+<div id="title-text">VCLtools🔧[FREE VER]</div>
+<div class="scrollbar" style="max-height:300px">
+
+     
+<br>
+<details type=“menu”>
+<summary>PARAMETER</summary><br>
+<span id="numvalue9"></span>GLOBAL SPEED
+  
+ 
+<input type="range" id="slider9" min="1" max="10"style="width:100%"  step="0.1" value="1"
+onchange="Speedf(this)"/>
+  <br>
+
+
+  
+                  LOCAL SPEED
+ 
+
+                <input type="range" id="slider6" min="1" max="6" style="width:100%" step="0.001" value="1"
+                       onchange="MySpeedf(this)" />
+                <script>
+
+                    function MySpeedf(input) {
+                        if (typeof addr3 === 'undefined') {
+                            h5gg.clearResults();
+                            h5gg.searchNumber("-2373.004", 'F32', '0x00000000', '0x200000000');
+                            h5gg.searchNearby("1", 'F32', '0x100');
+                            h5gg.searchNumber("1", 'F32', '0x00000000', '0x200000000');
+                            h5gg.getResults('1', 'F32');
+                            count3 = h5gg.getResultsCount();
+                            r3 = h5gg.getResults(count3);
+                            for (var i = 0; i < count3; i++) {
+                                addr3 = r3[i].address;
+                                h5gg.setValue(addr3, input.value * 1, 'F32');
+                                h5gg.clearResults()
+                            }
+                        }
+                        else {
+                            h5gg.setValue(addr3, input.value * 1, 'F32');
+                        }
+                    }
+  
+  </script>
+                  FOV
+
+                <input type="range" id="slider7" min="1" max="30" style="width:100%" step="0.001" value="1"
+                       onchange="Fov(this)" />
+                <script>
+
+                    function Fov(input) {
+                        if (typeof addr8 === 'undefined') {
+                            h5gg.clearResults();
+                            h5gg.searchNumber("256", 'F32', '0x00000000', '0x200000000');
+                            h5gg.searchNearby("4", 'I32', '0x20');
+                            h5gg.searchNearby('0.8', 'F32', '0x20');
+                            h5gg.searchNumber("256", 'F32', '0x00000000', '0x200000000');
+                            h5gg.getResults('1', 'F32');
+                            count8 = h5gg.getResultsCount();
+                            r8 = h5gg.getResults(count8);
+                            for (var i = 0; i < count8; i++) {
+                                addr8 = r8[i].address;
+                                h5gg.setValue(addr8, input.value * 256, 'F32');
+                                h5gg.clearResults()
+                            }
+                        }
+                        else {
+                            h5gg.setValue(addr8, input.value * 256, 'F32');
+                        }
+                    };
+
+                </script>
+<input type="button" value=" RESET " style=height:28px onclick="clr()">
+   </details>
+
+                 
+
+       
+                                  
+
+<br>
+<details type=“menu”>
+<summary>FUNCTIONS</summary><br>
+<input type="button" value="LOCK FPS" style=height:28px onclick="anniufps()">
+<input type="button" value="BODY COLOR" style=height:28px onclick="anniu62()">
+<input type="button" value="  HAIR COLOR "style=height:28px  onclick="anniu6()">
+<input type="button" value=" SMOOTH GROUND " style=height:28px onclick="anniu97()">
+<input type="button" value="  NIGHTVISION " style=height:28px onclick=" anniu76()">
+  <br><br>
+   
+  </details>
+<br>
+<details type=“menu”>
+<summary>RT SPAM</summary><br>      
+<input type="button" value="  SPAM RT " style=height:28px onclick=" xxz()">
+ </details>
+
+
+  
+  
+<br>
+<details type=“menu”>
+<summary>AIMBOT</summary><br>
+     <label>BIGHEAD<input class="switch-btn switch-btn animbg"type="checkbox"onclick="dat3(this)"></label>
+        <label>ANTENA<input class="switch-btn switch-btn 
+animbg"type="checkbox"onclick="tianx(this)"></label>
+       
+  
+  
+<script>
+  
+
+function dat3(e){
+
+
+
+  
+if(e.checked==true){
+
+   
+    h5gg.clearResults();
+    h5gg.searchNumber('3232863993', 'I32', '0x100000000', '0x160000000'); 
+    h5gg.searchNearby('1', 'F32', '0x10'); 
+    h5gg.searchNumber('1','F32','0x100000000', '0x160000000');
+   h5gg.getResults('100','0','F32');
+  count7 = h5gg.getResultsCount();
+var dat=prompt("SIZE ĐẦU");
+     r7=h5gg.getResults(count7);
+     for (var i =0; i<count7;i++){addr7 = r7[i].address;
+    
+ 
+    h5gg.setValue(addr7,dat, 'F32');}
+ 
+h5gg.clearResults();
+
+    
+  }else{
+for (var i =0; i<count7;i++){addr7 = r7[i].address;
+    
+ 
+    
+                             
+      
+    h5gg.setValue(addr7,'1', 'F32');}
+				
+
+}}
+
+						
+
+    
+    
+    
+
+
+
+
+        
+
+</script>
+</details>
+<br>
+<details type=“menu”>
+<summary>INFO</summary><br>
+  <input type="button" value="DISCORD"style=height:28px  onclick="jr()">
+</details>
+
+
+  
+ 
+                               
+</div>
+</div>
+</div>
+</body>
+
+
+
+
